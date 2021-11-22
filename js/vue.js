@@ -45,14 +45,10 @@ const app = new Vue({
             console.log('KO',error)
             this.httpError = true;
            });
-           
+
           this.allEmail=[];
         }
 
-      
-
-          
-      
 
       //con then faccio partire il console.log quando arriva la risposta, con catch faccio partire il console.log se viene errore
       
@@ -64,7 +60,7 @@ const app = new Vue({
     console.log('montato');
     console.log('axios',axios);
 
-    this.getEmail()
+    // this.getEmail()
 
     
   }
