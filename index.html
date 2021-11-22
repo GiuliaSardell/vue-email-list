@@ -14,11 +14,24 @@
 
 <div id="app" class="text-center m-5">
 
-  <button @click="getNumber"
-  class="btn btn-primary m-4">Genera email</button>
+  <div v-if="!httpError">
+    <button @click="getEmail"
+    class="btn btn-primary m-4">Genera email</button>
 
-  <h1 v-if="!isLoading">{{email}}</h1>
-  <h2 v-else >Loading...</h2>
+    <div v-for="email in allEmail">
+      <h1 v-if="!isLoading">{{email}}</h1>
+      <h2 v-else >Loading...</h2>
+
+    </div>
+    
+  </div>
+  
+  <!-- Il v-else viene visto solo se httpError è vero (che di default è false), diventa vera quando ho il catch della chiamata   -->
+  <div v-else>
+    <h1>ERRORE!</h1>
+  </div>
+
+  
   
 
 
